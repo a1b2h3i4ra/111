@@ -1,0 +1,55 @@
+Manifest-Version: 1.0
+Built-By: Generated-by-ADT
+Created-By: Android Gradle 3.5.3
+
+Name: AndroidManifest.xml
+SHA1-Digest: rR0+RsQwbXRC0pNt0BSzq8EsGR0=
+
+Name: assets/font/HAPPY.otf
+SHA1-Digest: coXtHai3s3mlw9yVjaRAjg4Bboc=
+
+Name: assets/font/font.otf
+SHA1-Digest: C4Bs4Q6VB5OlR/zCPWznHfQQTpY=
+
+Name: assets/font/logo.png
+SHA1-Digest: i1VpqPL6H1gTrb1t0NlDrBPKVME=
+
+Name: assets/logo.png
+SHA1-Digest: i1VpqPL6H1gTrb1t0NlDrBPKVME=
+
+Name: assets/main.jar
+SHA1-Digest: syV0QZsQZzE5md5oS6o4ud/HdWs=
+
+Name: classes.dex
+SHA1-Digest: HY2owBKwtD558Gpb1R+myeCKYjI=
+
+Name: lib/arm64-v8a/libItsRohitOp.so
+SHA1-Digest: 9IAWeqxxAjvRgGkXjAWQNCyCD8E=
+
+Name: lib/arm64-v8a/libinject.so
+SHA1-Digest: 8r5L28qxJHa61Rlzjr1i6oTonqw=
+
+Name: res/layout/activity_main.xml
+SHA1-Digest: vZj4Tgc3TgNg7Q2yT1hUfvGpwYw=
+
+Name: res/layout/login.xml
+SHA1-Digest: uMV/9uihN+OmuspXX9tBQiVK2s4=
+
+Name: res/mipmap-hdpi-v4/ic_launcher.png
+SHA1-Digest: i1VpqPL6H1gTrb1t0NlDrBPKVME=
+
+Name: res/mipmap-mdpi-v4/ic_launcher.png
+SHA1-Digest: i1VpqPL6H1gTrb1t0NlDrBPKVME=
+
+Name: res/mipmap-xhdpi-v4/ic_launcher.png
+SHA1-Digest: i1VpqPL6H1gTrb1t0NlDrBPKVME=
+
+Name: res/mipmap-xxhdpi-v4/ic_launcher.png
+SHA1-Digest: i1VpqPL6H1gTrb1t0NlDrBPKVME=
+
+Name: res/mipmap-xxxhdpi-v4/ic_launcher.png
+SHA1-Digest: i1VpqPL6H1gTrb1t0NlDrBPKVME=
+
+Name: resources.arsc
+SHA1-Digest: uxDgAkP3QkEYN4/6U+hlyjlrWhc=
+

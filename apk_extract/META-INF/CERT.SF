@@ -1,0 +1,56 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android)
+SHA1-Digest-Manifest: sDW8KbJNf6wPvILbpDpzL6sUg64=
+X-Android-APK-Signed: 2
+
+Name: AndroidManifest.xml
+SHA1-Digest: KxKWmQE6TS2hY6pItP/GqPGg87U=
+
+Name: assets/font/HAPPY.otf
+SHA1-Digest: k2Qatkou2T8kePgBLdEEOJ6yiV8=
+
+Name: assets/font/font.otf
+SHA1-Digest: KQSt1bMwQXQtPGsiogVSC1iyz7M=
+
+Name: assets/font/logo.png
+SHA1-Digest: GWW6jnBy3XMyWYPx0Fg0K0CyXNc=
+
+Name: assets/logo.png
+SHA1-Digest: YD9logZygMXzH8jqBm1drSlLxGU=
+
+Name: assets/main.jar
+SHA1-Digest: jz7BkmjtLPTGQ8nThERGnLiGfK0=
+
+Name: classes.dex
+SHA1-Digest: S4BTfuSaLUBQWqcZ0iLSSYp+Z6c=
+
+Name: lib/arm64-v8a/libItsRohitOp.so
+SHA1-Digest: cdt+loPX85XF6a3u29U6Y0rBYq4=
+
+Name: lib/arm64-v8a/libinject.so
+SHA1-Digest: hltZnVkA1gIPNK9lkG/jpKtgSJI=
+
+Name: res/layout/activity_main.xml
+SHA1-Digest: 96cEqlidqgkYG8K9jlMVWWayNRQ=
+
+Name: res/layout/login.xml
+SHA1-Digest: k1hf18OUO6qxEAFQKlcZyUIMEa0=
+
+Name: res/mipmap-hdpi-v4/ic_launcher.png
+SHA1-Digest: YukT2hpd9lttbkr7UGwKQFeRmCo=
+
+Name: res/mipmap-mdpi-v4/ic_launcher.png
+SHA1-Digest: pthR9He3xNydHsxa5Vul/sQRMDs=
+
+Name: res/mipmap-xhdpi-v4/ic_launcher.png
+SHA1-Digest: Z6soPIMt75qzDS/eqm6Bhx24FTw=
+
+Name: res/mipmap-xxhdpi-v4/ic_launcher.png
+SHA1-Digest: aAHKFFEQz9ForZS/wC8vlmLkHQY=
+
+Name: res/mipmap-xxxhdpi-v4/ic_launcher.png
+SHA1-Digest: r9Q72O8uz+9FmsJkdQNkaIA7bLM=
+
+Name: resources.arsc
+SHA1-Digest: EZJ80z3mbkMs/N8YrsdJ0i3Sr58=
+

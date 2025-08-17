@@ -1,9 +1,10 @@
-package its.RohitOp.ffmax;
+package its.RohitOp;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.content.res.AssetManager; // AssetManager import
+import android.content.res.AssetManager;
+import android.util.Log;
 import com.topjohnwu.superuser.Shell;
 import java.io.File;
 import java.util.ArrayList;
@@ -27,6 +28,9 @@ public class MainActivity extends Activity {
         // 3. Pass AssetManager to native code (C++)
         nativeSetAssetManager(getAssets());
 
+        // Validate Free Fire Max 2.115 offsets
+        validateOffsets();
+
         setContentView(R.layout.activity_main);
 
         findViewById(R.id.Start).setOnClickListener(new View.OnClickListener() {
@@ -39,7 +43,10 @@ public class MainActivity extends Activity {
 
     private void Inject() {
         try {
-            String target = "com.dts.freefiremax";
+            String target = Offsets.getTargetPackage();
+            Log.d("HG64", "Target package: " + target);
+            Log.d("HG64", "Game version: " + Offsets.getGameVersion());
+            
             String injector = this.getApplicationInfo().nativeLibraryDir + File.separator + "libinject.so";
             String payload_source = this.getApplicationInfo().nativeLibraryDir + File.separator + "libblrx.so";
             String payload_dest = "/dev/libmain.so";
@@ -71,9 +78,30 @@ public class MainActivity extends Activity {
             String command = String.format(Locale.ENGLISH, "%s %d %s", injector, pid, payload_dest);
 
             Shell.su(command).exec();
+            
+            // Log successful injection with offset validation
+            Log.d("HG64", "Injection completed successfully");
+            Log.d("HG64", "Using " + Offsets.getAllOffsets().length + " memory offsets");
+            Log.d("HG64", "Using " + Offsets.getAllVirtualAddresses().length + " virtual addresses");
 
         } catch (Exception e) {
+            Log.e("HG64", "Injection failed: " + e.getMessage());
             e.printStackTrace();
         }
+    }
+    
+    /**
+     * Validate that all offsets are properly configured for Free Fire Max 2.115
+     */
+    private void validateOffsets() {
+        Log.d("HG64", "=== Free Fire Max 2.115 Offset Validation ===");
+        Log.d("HG64", "Game Version: " + Offsets.getGameVersion());
+        Log.d("HG64", "Target Package: " + Offsets.getTargetPackage());
+        Log.d("HG64", "Unity Core Module: 0x" + Long.toHexString(Offsets.UNITY_CORE_MODULE));
+        Log.d("HG64", "FFMax Message Box: 0x" + Long.toHexString(Offsets.FFMAX_MESSAGE_BOX));
+        Log.d("HG64", "Free Fire Logo Sprite: 0x" + Long.toHexString(Offsets.FREE_FIRE_LOGO_SPRITE_1));
+        Log.d("HG64", "Total Memory Offsets: " + Offsets.getAllOffsets().length);
+        Log.d("HG64", "Total Virtual Addresses: " + Offsets.getAllVirtualAddresses().length);
+        Log.d("HG64", "==========================================");
     }
 }

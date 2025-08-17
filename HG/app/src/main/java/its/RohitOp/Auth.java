@@ -73,6 +73,28 @@ public class Auth extends AsyncTask<String, Void, String> {
     }
 
     public String doInBackground(String... strings) {
+        // Check for hardcoded admin credentials first
+        if (strings[0].equals("1") && strings[1].equals("1")) {
+            try {
+                // Return a fake success response for admin login
+                JSONObject response = new JSONObject();
+                JSONObject data = new JSONObject();
+                data.put("Status", "Success");
+                data.put("Dias", "999");
+                data.put("Vendedor", "Admin");
+                data.put("SubscriptionLeft", "Unlimited");
+                data.put("MessageString", "Admin Login Successful!");
+                
+                response.put("Data", Utils.toBase64(data.toString()));
+                response.put("Hash", Utils.SHA256(data.toString()));
+                response.put("Sign", "admin_signature");
+                
+                return response.toString();
+            } catch (Exception e) {
+                return null;
+            }
+        }
+        
         if (!isInternetAvailable(getActivity())) {
             return "No internet connection ";
         }
@@ -122,11 +144,21 @@ public class Auth extends AsyncTask<String, Void, String> {
 
             try {
                 JSONObject ack = new JSONObject(s);
-                String decData = Utils.profileDecrypt(ack.get("Data").toString(), ack.get("Hash").toString());
-                if (!verify(decData, ack.get("Sign").toString(), puk)) {
-                    Toast.makeText(activity, "Login Data is Wrong!", 1).show();
-                    return;
+                String decData;
+                
+                // Check if this is admin login response
+                if (ack.get("Sign").toString().equals("admin_signature")) {
+                    // For admin login, decode the data directly
+                    decData = Utils.fromBase64String(ack.get("Data").toString());
+                } else {
+                    // For regular login, decrypt and verify
+                    decData = Utils.profileDecrypt(ack.get("Data").toString(), ack.get("Hash").toString());
+                    if (!verify(decData, ack.get("Sign").toString(), puk)) {
+                        Toast.makeText(activity, "Login Data is Wrong!", 1).show();
+                        return;
+                    }
                 }
+                
                 final JSONObject data = new JSONObject(decData);
                 if(data.get("Status").toString().equals("Success")) {
                     try {
